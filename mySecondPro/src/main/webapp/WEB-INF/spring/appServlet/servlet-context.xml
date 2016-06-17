@@ -37,11 +37,10 @@
 		<beans:property name="order" value="1" />
 	</beans:bean>
 
-	<context:component-scan base-package="kr.kitri.secondPro" />
-	<context:component-scan base-package="kr.kitri.main" />
+	<context:component-scan base-package="kr.kitri" />
 	<context:component-scan base-package="test" />
 	<context:component-scan base-package="emp" />
-
+	<context:component-scan base-package="etc" />
 
 	<!-- 추가 -->
 
@@ -63,7 +62,6 @@
 		<!--<beans:property name="mapperLocations" value="classpath:mapper/*.xml"></beans:property> -->
 		<beans:property name="configLocation"
 			value="/WEB-INF/config/mybatis-config.xml"></beans:property>
-
 	</beans:bean>
 
 	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
@@ -101,20 +99,33 @@
 	<!-- 인터셉터 등록 -->
 	<interceptors>
 		<interceptor>
-			<mapping path="/count.do" />
-			<mapping path="/insert.do" />
+			<mapping path="/emp/*" />
 			<beans:bean class="etc.controller.TimeCheckInterceptor"></beans:bean>
 		</interceptor>
 
-	</interceptors>
-	<interceptors>
 		<interceptor>
 			<mapping path="/mybatislist.do" />
 			<mapping path="/mybatissearch.do" />
 			<beans:bean class="etc.controller.LoginCheckInterceptor"></beans:bean>
 		</interceptor>
-
 	</interceptors>
+
+	<!-- ===========================다국어 지원============================== -->
+	<beans:bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<beans:property name="basenames">
+			<beans:list>
+				<beans:value>/WEB-INF/message/message</beans:value>
+			</beans:list>
+		</beans:property>
+		<beans:property name="defaultEncoding" value="UTF-8" />
+	</beans:bean>
+
+
+	<!-- Locale정보를 확인하기 위한 클래스 등록( 쿠키 정보에서 Locale정보에 등록 -->
+	<beans:bean id="localResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+	</beans:bean>
 
 
 </beans:beans>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  
+<mapper namespace="kitri.board">
+ 	
+ 	<insert id = "board_write" parameterType="board">
+ 		insert into tb_table values(#{board_no}, #{mem_id}, #{title}, #{text}, #{count}, #{del_flg}, #{reg_dtm}, #{mod_dtm})
+ 	</insert>
+ 	
+ 	<update id = "board_modify" parameterType="board">
+ 		update 
+ 	</update>
+ 	
+ 	<delete id = "board_delete" parameterType="String">
+ 		delete
+ 	</delete>
+ 	
+ 	<select id = "board_read" parameterType = "String" resultType="board">
+ 		select
+ 	</select>
+ 	
+ 	<select id = "board_search" parameterType ="String" resultType="board">
+ 		select
+ 	</select>
+</mapper>

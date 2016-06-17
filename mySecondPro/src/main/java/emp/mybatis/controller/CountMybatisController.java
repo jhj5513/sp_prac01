@@ -12,7 +12,7 @@ public class CountMybatisController {
 	@Autowired
 	MyEmpService service;
 	
-	@RequestMapping("/count.do")
+	@RequestMapping("/emp/count.do")	//변경
 	public String getCount(){
 		int result = service.count();
 		System.out.println("인원수 : " + result);

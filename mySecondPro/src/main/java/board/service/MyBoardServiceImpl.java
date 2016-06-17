@@ -15,38 +15,34 @@ public class MyBoardServiceImpl implements MyBoardService {
 	@Qualifier("boarddao")
 	MyBoardDAO dao;
 
-	public MyBoardDAO getDao() {
-		return dao;
-	}
-
-	public void setDao(MyBoardDAO dao) {
-		this.dao = dao;
+	@Override
+	public void board_write(MyBoardDTO write_dto) {
+		dao.board_write(write_dto);
+		
 	}
 
 	@Override
-	public void write(MyBoardDTO write_dto) {
-		dao.write(write_dto);
-
+	public void board_modify(MyBoardDTO mod_dto) {
+		dao.board_modify(mod_dto);
 	}
 
 	@Override
-	public void modify(MyBoardDTO mod_dto) {
-		dao.modify(mod_dto);
+	public void board_delete(String board_no) {
+		dao.board_delete(board_no);
+		
 	}
 
 	@Override
-	public void delete(String board_no) {
-		dao.delete(board_no);
+	public MyBoardDTO board_read(String board_no) {
+		// TODO Auto-generated method stub
+		return dao.board_read(board_no);
 	}
 
 	@Override
-	public MyBoardDTO read(String board_no) {
-		return dao.read(board_no);
+	public List<MyBoardDTO> board_search(String title) {
+		// TODO Auto-generated method stub
+		return dao.board_search(title);
 	}
-
-	@Override
-	public List<MyBoardDTO> search(String title) {
-		return dao.search(title);
-	}
-
+	
+	
 }

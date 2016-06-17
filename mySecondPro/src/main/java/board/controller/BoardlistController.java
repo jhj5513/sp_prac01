@@ -15,7 +15,7 @@ public class BoardlistController {
 
 	@RequestMapping(value = "/board_list.do", method = RequestMethod.GET)
 	public String showPage() {
-		return "emp/board_list";
+		return "board/board_list";
 	}
 
 }

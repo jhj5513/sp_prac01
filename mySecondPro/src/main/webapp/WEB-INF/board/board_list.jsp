@@ -11,7 +11,7 @@
 <head>
 <title>°Ô½ÃÆÇ</title>
 
-<LINK rel="stylesheet" type="text/css" href="/annotation/common/board_css.css">
+<LINK rel="stylesheet" type="text/css" href="/mySecondPro/res/css/board_css.css">
 </head>
 
 

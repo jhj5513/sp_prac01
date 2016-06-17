@@ -6,10 +6,11 @@ import board.dto.MyBoardDTO;
 
 public interface MyBoardService {
 
-	void write(MyBoardDTO write_dto);
-	void modify(MyBoardDTO mod_dto);
-	void delete(String board_no);
-	MyBoardDTO read(String board_no);
-	List<MyBoardDTO> search(String title);
+	void board_write(MyBoardDTO write_dto);
+	void board_modify(MyBoardDTO mod_dto);
+	void board_delete(String board_no);
+	MyBoardDTO board_read(String board_no);
+	List<MyBoardDTO> board_search(String title);
+		
 	
 }

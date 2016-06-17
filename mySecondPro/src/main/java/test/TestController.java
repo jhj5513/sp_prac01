@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class TestController {
-	@RequestMapping("/test.do")
+	@RequestMapping("/emp/test.do")
 	public ModelAndView test(){
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("msg", "Annotation data from Spring");

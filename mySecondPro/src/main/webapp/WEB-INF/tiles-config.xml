@@ -47,10 +47,18 @@
 	<definition name="tx/input" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/emp/txmemberInput.jsp" />
 	</definition>
-	
+
 	<definition name="login/form" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/emp/login.jsp" />
 	</definition>
-	
-	
+
+	<definition name="board/board_list" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/board/board_list.jsp" />
+	</definition>
+
+	<definition name="i18ntest" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/views/message.jsp" />
+	</definition>
+
+
 </tiles-definitions>

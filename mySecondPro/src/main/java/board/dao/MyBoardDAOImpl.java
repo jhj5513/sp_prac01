@@ -2,65 +2,50 @@ package board.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import board.dto.MyBoardDTO;
 
 
-@Repository("boarddao")
+@Repository("myboarddao")
 public class MyBoardDAOImpl implements MyBoardDAO {
 
 	@Autowired
-	private JdbcTemplate template;
+	SqlSession sqlSession;
 	
 	private MyBoardDAOImpl(){
 	}
-	
-	
-	public JdbcTemplate getTemplate() {
-		return template;
-	}
-
-
-	public void setTemplate(JdbcTemplate template) {
-		this.template = template;
-	}
-
 
 	@Override
-	public void write(MyBoardDTO write_dto) {
-		String sql = "insert into tb_table values(?, ?, ?, ?, ?, ?, ?, ?)";
-		int result = template.update(sql, write_dto.getBoard_no(), 
-				write_dto.getMem_id(),write_dto.getTitle(), 
-				write_dto.getText(), write_dto.getCount(),
-				write_dto.getReg_dtm(), write_dto.getDel_flg());
+	public void board_write(MyBoardDTO write_dto) {
+		sqlSession.insert("kitri.board.board_write", write_dto);
 	}
 
 	@Override
-	public void modify(MyBoardDTO mod_dto) {
-		// TODO Auto-generated method stub
+	public void board_modify(MyBoardDTO mod_dto) {
+		sqlSession.update("kitri.board.board_modify");
 		
 	}
 
 	@Override
-	public void delete(String board_no) {
-		// TODO Auto-generated method stub
-		
+	public void board_delete(String board_no) {
+		sqlSession.delete("kitri.board.board_delete");
 	}
 
 	@Override
-	public MyBoardDTO read(String board_no) {
+	public MyBoardDTO board_read(String board_no) {
 		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("kitri.board.board_read", board_no);
 	}
 
 	@Override
-	public List<MyBoardDTO> search(String title) {
+	public List<MyBoardDTO> board_search(String title) {
 		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("kitri.board.board_search", title);
 	}
+	
 
 
 }

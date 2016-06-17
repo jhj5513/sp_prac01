@@ -3,6 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
+  
+  <!-- emp -->
  <mapper namespace="kitri.myemp">
  	<select id="count" resultType="int">
  		select count(*) from myemp
@@ -32,6 +34,9 @@
  	<select id="login" parameterType="emp" resultType="emp">
  		select * from myemp where id= #{id} and pass=#{pass}
  	</select>
+ 	
+ 	
+ 
  	
  </mapper>
  

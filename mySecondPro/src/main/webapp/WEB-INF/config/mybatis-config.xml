@@ -2,15 +2,18 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
-  
-  <configuration>
-  	<typeAliases>
-  		<typeAlias type="emp.dto.MyEmpDTO" alias="emp"/>
-  	</typeAliases>
-  	
-  	<mappers>
-  		<mapper resource="mapper/empMapper.xml"/>
-  	</mappers>
-  	
-  
-  </configuration>
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="emp.dto.MyEmpDTO" alias="emp" />
+		<typeAlias type="board.dto.MyBoardDTO" alias="board" />
+		
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="mapper/empMapper.xml" />
+		<mapper resource="mapper/boardMapper.xml" />
+	</mappers>
+
+
+</configuration>
