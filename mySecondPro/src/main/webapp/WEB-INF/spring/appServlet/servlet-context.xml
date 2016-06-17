@@ -123,7 +123,7 @@
 
 
 	<!-- Locale정보를 확인하기 위한 클래스 등록( 쿠키 정보에서 Locale정보에 등록 -->
-	<beans:bean id="localResolver"
+	<beans:bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
 	</beans:bean>
 

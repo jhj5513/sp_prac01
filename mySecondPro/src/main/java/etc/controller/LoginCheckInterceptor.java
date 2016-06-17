@@ -24,7 +24,7 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter{
 		
 		if(request.getSession(false).getAttribute("loginUser")==null){
 			System.out.println("로그인 하세요");
-			response.sendRedirect("mySecondPro/login.do");
+			response.sendRedirect("/mySecondPro/login.do");
 			return false;
 		}
 		return true;

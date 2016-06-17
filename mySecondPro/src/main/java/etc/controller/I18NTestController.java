@@ -18,6 +18,7 @@ import emp.dto.MyEmpDTO;
 public class I18NTestController {
 	@Autowired
 	LocaleResolver resolver;
+	
 /*	public ModelAndView ShowPage(String lang, HttpServletRequest req, HttpServletResponse res)
 	throws Exception{
 		//언어 정보를 이용해서 Locale객체를 생성 :: 지역정보 setting
