@@ -72,5 +72,8 @@
 		<put-attribute name="content" value="/WEB-INF/emp/upload.jsp" />
 	</definition>
 
+	<definition name="upload/form" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/board/board_read.jsp" />
+	</definition>
 
 </tiles-definitions>
