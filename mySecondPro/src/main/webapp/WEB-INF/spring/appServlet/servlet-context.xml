@@ -41,7 +41,7 @@
 	<context:component-scan base-package="test" />
 	<context:component-scan base-package="emp" />
 	<context:component-scan base-package="etc" />
-
+ 	<context:component-scan base-package="board" /> 
 	<!-- 추가 -->
 
 
@@ -96,8 +96,12 @@
 			pointcut-ref="trans" />
 	</aop:config>
 
-	<!-- 인터셉터 등록 -->
+	<!-- ===========================인터셉터 등록=========================== -->
 	<interceptors>
+		<beans:bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<beans:property name="paramName" value="lang"/>
+		</beans:bean>
+	
 		<interceptor>
 			<mapping path="/emp/*" />
 			<beans:bean class="etc.controller.TimeCheckInterceptor"></beans:bean>
@@ -110,7 +114,7 @@
 		</interceptor>
 	</interceptors>
 
-	<!-- ===========================다국어 지원============================== -->
+	<!-- ===========================다국어 지원=========================== -->
 	<beans:bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<beans:property name="basenames">
@@ -122,11 +126,15 @@
 	</beans:bean>
 
 
-	<!-- Locale정보를 확인하기 위한 클래스 등록( 쿠키 정보에서 Locale정보에 등록 -->
+	<!-- =============Locale정보를 확인하기 위한 클래스 등록( 쿠키 정보에서 Locale정보에 등록==============-->
 	<beans:bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
 	</beans:bean>
 
+	<!-- ===========================파일 업로드 설정=========================== -->
+	<beans:bean id = "multipartResolver" class ="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<beans:property name="maxUploadSize" value = "1000000"></beans:property>
+	</beans:bean>
 
 </beans:beans>
 

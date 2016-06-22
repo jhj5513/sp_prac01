@@ -11,6 +11,6 @@ public interface MyBoardService {
 	void board_delete(String board_no);
 	MyBoardDTO board_read(String board_no);
 	List<MyBoardDTO> board_search(String title);
-		
+	List<MyBoardDTO> BoardList();
 	
 }

@@ -12,7 +12,7 @@ import board.dto.MyBoardDTO;
 @Service
 public class MyBoardServiceImpl implements MyBoardService {
 	@Autowired
-	@Qualifier("boarddao")
+	@Qualifier("myboarddao")
 	MyBoardDAO dao;
 
 	@Override
@@ -42,6 +42,12 @@ public class MyBoardServiceImpl implements MyBoardService {
 	public List<MyBoardDTO> board_search(String title) {
 		// TODO Auto-generated method stub
 		return dao.board_search(title);
+	}
+
+	@Override
+	public List<MyBoardDTO> BoardList() {
+		// TODO Auto-generated method stub
+		return dao.BoardList();
 	}
 	
 	

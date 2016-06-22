@@ -11,5 +11,10 @@
 	<hr/>
 	<h3>JSP로 출력 : <%=request.getAttribute("msg") %></h3>
 	<h3>EL(expression Language)로 출력: ${msg}</h3>
+	
+	<th><spring:message code="member.form.id"/></th>
+	<th><spring:message code="member.form.pass" /></th>
+	<th><spring:message code="member.form.name" /></th>
+	<th><spring:message code="member.form.addr" /></th>
 </body>
 </html>

@@ -5,13 +5,15 @@ public class MyBoardDTO {
 	private String mem_id;
 	private String title;
 	private String text;
-	private String count;
+	private int count;
 	private String del_flg;
 	private String reg_dtm;
 	private String mod_dtm;
 	
 	
-	public MyBoardDTO(String board_no, String mem_id, String title, String text, String count, String del_flg,
+	public MyBoardDTO(){}
+	
+	public MyBoardDTO(String board_no, String mem_id, String title, String text, int count, String del_flg,
 			String reg_dtm, String mod_dtm) {
 		super();
 		this.board_no = board_no;
@@ -23,7 +25,6 @@ public class MyBoardDTO {
 		this.reg_dtm = reg_dtm;
 		this.mod_dtm = mod_dtm;
 	}
-
 
 	public String getBoard_no() {
 		return board_no;
@@ -65,12 +66,12 @@ public class MyBoardDTO {
 	}
 
 
-	public String getCount() {
+	public int getCount() {
 		return count;
 	}
 
 
-	public void setCount(String count) {
+	public void setCount(int count) {
 		this.count = count;
 	}
 
@@ -103,8 +104,6 @@ public class MyBoardDTO {
 	public void setMod_dtm(String mod_dtm) {
 		this.mod_dtm = mod_dtm;
 	}
-	
-	
 }
 
 

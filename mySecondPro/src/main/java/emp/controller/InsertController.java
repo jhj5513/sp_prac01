@@ -25,10 +25,9 @@ public class InsertController {
 	//post방식으로 요청될 떄 실행할 메소드 > 실제 db에 insert를 하기 위한 기능을 수행
 	@RequestMapping(value="/insert.do", method = RequestMethod.POST)
 	public ModelAndView runInsert(HttpServletRequest req, MyEmpDTO user){
-		System.out.println("user");
+		System.out.println(user);
 		service.insert(user);
 		
 		return new ModelAndView("redirect:/index.do");
-
 	}
 }

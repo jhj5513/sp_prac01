@@ -52,12 +52,24 @@
 		<put-attribute name="content" value="/WEB-INF/emp/login.jsp" />
 	</definition>
 
+	<!-- board -->
+
 	<definition name="board/board_list" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/board/board_list.jsp" />
 	</definition>
 
+
+	<definition name="board/board_write" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/board/board_write.jsp" />
+	</definition>
+
+
 	<definition name="i18ntest" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/views/message.jsp" />
+	</definition>
+
+	<definition name="upload/form" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/emp/upload.jsp" />
 	</definition>
 
 
