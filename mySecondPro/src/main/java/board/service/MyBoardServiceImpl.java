@@ -49,6 +49,12 @@ public class MyBoardServiceImpl implements MyBoardService {
 		// TODO Auto-generated method stub
 		return dao.BoardList();
 	}
+
+	@Override
+	public void board_count(String board_no) {
+		dao.board_count(board_no);
+		
+	}
 	
 	
 }

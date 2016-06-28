@@ -50,6 +50,11 @@ public class MyBoardDAOImpl implements MyBoardDAO {
 		
 		return sqlSession.selectList("kitri.board.board_list");
 	}
+
+	@Override
+	public void board_count(String board_no) {
+		sqlSession.update("kitri.board.board_count", board_no);
+	}
 	
 
 

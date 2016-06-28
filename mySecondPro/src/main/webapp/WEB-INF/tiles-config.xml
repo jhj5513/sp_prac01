@@ -62,6 +62,10 @@
 	<definition name="board/board_write" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/board/board_write.jsp" />
 	</definition>
+	
+		<definition name="board/board_read" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/board/board_read.jsp" />
+	</definition>
 
 
 	<definition name="i18ntest" extends="mainTemplate">

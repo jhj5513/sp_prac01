@@ -56,7 +56,7 @@
 			<tr>
 				<td><%= blist.getBoard_no() %></td>
 				<td>
-				<a href="board_read.do"><%= blist.getTitle() %></a></td>
+				<a href="board_read.do?board_no=<%= blist.getBoard_no() %>"><%= blist.getTitle() %></a></td>
 				<td><%= blist.getMem_id() %></td>
 				<td><%= blist.getMod_dtm() %></td>
 				<td><%= blist.getCount() %></td>

@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.util.*, board.dto.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
 <title>글 읽기</title>
 <script type="text/javascript">
 	function move(url) {
@@ -25,6 +28,8 @@ body {
 </head>
 
 <body>
+	
+
 	<form name="BoardViewForm" method="post">
 	<table summary="전체 테이블 구성">
 	<tr>
@@ -33,11 +38,11 @@ body {
 	<tr>
 		<td colspan=2>
 		<table border="0" summary="목록 테이블 구성"> 
-    <tr> 
+    <tr> 			
 		<td align=center bgcolor=#dddddd width=20%> 작성자</td>
-		<td bgcolor=#ffffe8 width=40%>지후니</td>
+		<td bgcolor=#ffffe8 width=40%>${board_read.mem_id }</td>
 		<td align=center bgcolor=#dddddd width=50%> 작성일</td>
-		<td bgcolor=#ffffe8 width=40%>2015/11/23</td>
+		<td bgcolor=#ffffe8 width=40%>${board_read.reg_dtm }</td>
 	</tr>
     <tr>
 <!-- 		<td align=center bgcolor=#dddddd> E-mail </td>
@@ -48,15 +53,16 @@ body {
  	</tr>
 	<tr> 
 		<td align=center bgcolor=#dddddd> 제 목</td>
-		<td bgcolor=#ffffe8 colspan=3> 게시판 글입니다</td>
+		<td bgcolor=#ffffe8 colspan=3> ${board_read.title }</td>
    </tr>
    <tr> 
-		<td colspan=4><br>가나다라마바사<br></td>
+		<td colspan=4><br>${board_read.text }<br></td>
    </tr>
    <tr>
-		<td colspan=4 align=right> 조회수  : </td>
+		<td colspan=4 align=right> 조회수  : ${board_read.count }</td>
    </tr>
 	</table>
+
 	</td>
  	</tr>
 	<tr>

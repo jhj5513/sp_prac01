@@ -2,34 +2,40 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
- <!-- CREATE SEQUENCE SEQ_board_no START WITH 1 INCREMENT BY 1 MAXVALUE 99999 CYCLE NOCACHE;  -->
- <!-- #{board_no}, #{mem_id}, #{title}, #{text}, #{count}, #{del_flg}, #{reg_dtm}, #{mod_dtm} -->
+
+<!-- CREATE SEQUENCE SEQ_board_no START WITH 1 INCREMENT BY 1 MAXVALUE 99999 
+	CYCLE NOCACHE; -->
+<!-- #{board_no}, #{mem_id}, #{title}, #{text}, #{count}, #{del_flg}, #{reg_dtm}, 
+	#{mod_dtm} -->
 <mapper namespace="kitri.board">
- 	
- 	<insert id = "board_write" parameterType="board">
- 		insert into tb_board values(seq_board_no.nextval, #{mem_id}, #{title}, #{text}, 0, '0', #{reg_dtm}, #{reg_dtm})
- 	</insert>
- 	
- 	<update id = "board_modify" parameterType="board">
- 		update 
- 	</update>
- 	
- 	<delete id = "board_delete" parameterType="String">
- 		delete
- 	</delete>
- 	
- 	<select id = "board_read" parameterType = "String" resultType="board">
- 		select
- 	</select>
- 	
- 	<select id = "board_search" parameterType ="String" resultType="board">
- 		select
- 	</select>
- 	
- 	<select id = "board_list" resultType="board">
- 		select * from tb_board
- 	</select>
- 	 		
- 	
+
+	<insert id="board_write" parameterType="board">
+		insert into tb_board values(seq_board_no.nextval, #{mem_id}, #{title},
+		#{text}, 0, '0', #{reg_dtm}, #{reg_dtm})
+	</insert>
+
+	<update id="board_modify" parameterType="board">
+		update
+	</update>
+
+	<delete id="board_delete" parameterType="String">
+		delete
+	</delete>
+
+	<select id="board_read" parameterType="String" resultType="board">
+		select * from tb_board where board_no = #{board_no}
+	</select>
+
+	<select id="board_search" parameterType="String" resultType="board">
+		select * from tb_board where board_no = #{board_no}
+	</select>
+
+	<select id="board_list" resultType="board">
+		select * from tb_board
+	</select>
+	
+	<update id="board_count" parameterType="String">
+		update tb_board set count = count+1 where board_no = #{board_no}
+	</update>
+
 </mapper>

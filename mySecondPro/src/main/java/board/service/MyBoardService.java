@@ -12,5 +12,5 @@ public interface MyBoardService {
 	MyBoardDTO board_read(String board_no);
 	List<MyBoardDTO> board_search(String title);
 	List<MyBoardDTO> BoardList();
-	
+	void board_count(String board_no);
 }
